@@ -8,17 +8,9 @@ main()
     {
         if (mayor < m[i])
             mayor = m[i];
+        posicion = i + 1;
     }
-    menor = mayor;
-    for (i = 0; i < 10; i++)
-    {
-        if (menor > m[i])
-        {
-            menor = m[i];
-            posicion = i + 1;
-        }
-    }
-    printf("EL menor es: %d y la posicion es: %d", menor, posicion);
+    printf("EL mayor es: %d y la posicion es: %d", mayor, posicion);
 
     return 0;
 }
