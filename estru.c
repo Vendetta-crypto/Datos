@@ -24,7 +24,7 @@ int main()
     struct paciente *pas;
     pas = &paci;
     int i;
-    for (i = 0; i <= 4; i++)
+    for (i = 0; i <= 2; i++)
     {
         printf("Ingresa los datos del paciente\n");
         printf("Ingresa el numero de seguro social: ");
@@ -48,7 +48,7 @@ int main()
         printf("Ingresa el consultorio: ");
         scanf("%s", &pas->consultorio);
     }
-    for (i = 0; i <= 4; i++)
+    for (i = 0; i <= 2; i++)
     {
         printf("Los datos del paciente son\n");
         printf("Numero de seguro social: %s \n", &pas->nss);
