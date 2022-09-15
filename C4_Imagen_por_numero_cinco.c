@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
         {
             for (int i = 1; i < 6; i++)
             {
-                printf("%d",i);
+                printf("%d", i);
             }
             printf("\n");
         }
