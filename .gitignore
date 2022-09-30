@@ -3,10 +3,12 @@
 *.o
 *.doc
 *.pdf
+*.txt
+*.ino
 vector.c
 Trabajos/
 11-Gana.c
 8-Indices.c
 14-Fechas.c
 pruebas.c
-C5_Trabajador.c
+C5-Trabajador.c
