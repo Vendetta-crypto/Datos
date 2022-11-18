@@ -1,6 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
-struct restaurante
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct
 {
     char nombre[25];
     char direccion[30];
@@ -10,38 +11,48 @@ struct restaurante
     char plato_caro[15];
     char plato_barato[15];
     char categoria[1];
-};
+} restaurante;
 int main()
 {
-    int i;
-    struct restaurante datos;
+    FILE *fichero;
+
+    if ((fichero = fopen("Restaurante.txt", "a+")) == NULL)
+    {
+        printf("No se puede abrir el fichero.\n");
+        exit(1);
+    }
+    
     printf("_________________________________________________________________\n");
-    printf("Ingresa el nombre del resturante: ");
-    scanf("%s",&datos.nombre);
-    printf("Ingresa la direccion del restaurante: ");
-    scanf("%s",&datos.direccion);
-    printf("Ingresa la ciudad donde se encuntra el resturante: ");
-    scanf("%s",&datos.ciudad);
-    printf("Ingresa el numero telefonico: ");
-    scanf("%s",&datos.telefono);
-    printf("Ingresa el tipo de comida que sirve: ");
-    scanf("%s",&datos.tipo_comida);
-    printf("Ingresa el precio del plato mas caro: ");
-    scanf("%s",&datos.plato_caro);
-    printf("Ingresa el precio del plato mas barato: ");
-    scanf("%s",&datos.plato_barato);
-    printf("Ingresa el numero de tenedores que tiene el resturante (Categoria): ");
-    scanf("%s",&datos.categoria);
+    for ( int i = 0; i < 1; i++)
+    {
+        printf("Ingresa el nombre del resturante: ");
+        fflush(stdin);
+        gets(restaurante.nombre);
+        printf("Ingresa la direccion del restaurante: ");
+        fflush(stdin);
+        gets(restaurante.direccion);
+        printf("Ingresa la ciudad donde se encuntra el resturante: ");
+        fflush(stdin);
+        gets(restaurante.ciudad);
+        printf("Ingresa el numero telefonico: ");
+        fflush(stdin);
+        gets(restaurante.telefono);
+        printf("Ingresa el tipo de comida que sirve: ");
+        fflush(stdin);
+        gets(restaurante.tipo_comida);
+        printf("Ingresa el precio del plato mas caro: ");
+        fflush(stdin);
+        gets(restaurante.plato_caro);
+        printf("Ingresa el precio del plato mas barato: ");
+        fflush(stdin);
+        gets(restaurante.plato_barato);
+        printf("Ingresa el numero de tenedores que tiene el resturante (Categoria): ");
+        fflush(stdin);
+        gets(restaurante.categoria);
 
-    printf("los datos ingresados son\n");
-    printf("Nombre: %s\n",datos.nombre);
-    printf("Direccion: %s\n",datos.direccion);
-    printf("Ciudad: %s\n",datos.ciudad);
-    printf("Telefono: %s\n",datos.telefono);
-    printf("Tipo de comida: %s\n",datos.tipo_comida);
-    printf("Plato mas caro: %s\n",datos.plato_caro);
-    printf("Plato mas barato: %s\n",datos.plato_barato);
-    printf("Categoria: %s",datos.categoria);
-    return 0;
+        /*Guarda en el fichero*/
+        fwrite(&restaurante, sizeof(restaurante), 1, fichero);
+    }
+    fclose(fichero);
+    
 }
-
