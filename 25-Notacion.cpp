@@ -7,7 +7,7 @@ int prioridad(char simbolo);
 int main()
 {
     int opcion, tope = -1, pos = -1, tamExpresion;
-    int pila[tam], epos[tam],epre[tam];
+    int pila[tam], epos[tam], epre[tam];
     char expinf[tam], simbolo;
     do
     {
@@ -83,7 +83,7 @@ int main()
             tope = -1;
             pos = -1;
             tamExpresion = strlen(expinf);
-            for (int i = tamExpresion-1; i >=0; i--)
+            for (int i = tamExpresion - 1; i >= 0; i--)
             {
                 simbolo = expinf[i];
                 if (simbolo == ')')
